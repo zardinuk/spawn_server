@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Moss"]
-  s.date = %q{2010-09-08}
+  s.date = %q{2010-10-01}
   s.description = %q{TODO: longer description of your gem}
   s.email = %q{jeff.moss@matchbin.com}
   s.extra_rdoc_files = [
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "lib/spawn/server.rb",
      "lib/spawn/task.rb",
      "lib/spawn_server.rb",
+     "spawn_server.gemspec",
      "test/spawn_server_test.rb",
      "test/test_helper.rb"
   ]
