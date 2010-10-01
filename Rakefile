@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "spawn_server"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Spawns and monitors processes using fork call}
+    gem.description = %Q{Spawns processes using fork call, monitors them and other neat things.}
     gem.email = "jeff.moss@matchbin.com"
     gem.homepage = "http://github.com/zardinuk/spawn_server"
     gem.authors = ["Jeff Moss"]
