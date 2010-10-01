@@ -191,7 +191,7 @@ module Spawn
       return (running >= quota)
     end
 
-    def process_stop(id, pid, recursive=true)
+    def process_stop(id, pid, recursive=true, wait_time=5)
       return unless pid
 
       if recursive
@@ -199,7 +199,7 @@ module Spawn
         Dir.glob('/proc/*/status').each do |stat_file|
           File.open(stat_file).each do |line|
             if line =~ /^PPid:\s*#{pid}$/
-              process_stop(id, stat_file.match(/[0-9]+/)[0].to_i)
+              process_stop(id, stat_file.match(/[0-9]+/)[0].to_i, recursive, wait_time)
               break
             end
           end
@@ -207,7 +207,11 @@ module Spawn
       end
 
       logger.debug "Stopping process #{pid} (#{id})"
-      Process.kill(9, pid) rescue nil
+      Thread.new do
+        Process.kill('HUP', pid) rescue nil
+        sleep(wait_time)
+        Process.kill(9, pid) rescue nil
+      end
     end
 
     def process_start(id, params={})
