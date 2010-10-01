@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeff Moss"]
   s.date = %q{2010-10-01}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Spawns processes using fork call, monitors them and other neat things.}
   s.email = %q{jeff.moss@matchbin.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Spawns and monitors processes using fork call}
   s.test_files = [
     "test/test_helper.rb",
      "test/spawn_server_test.rb"
